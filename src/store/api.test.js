@@ -4,19 +4,17 @@
 
 // Test getting settings
 describe('settings', () => {
-  beforeEach(() => {
-    jest.mock('./api', () => {
-      return {
-        readSettings: jest
-          .fn() // jest spy here
-          .mockReturnValue(Promise.resolve())
-          .mockReturnValueOnce(Promise.resolve({ status: 'ok' }))
-      }
-    })  
-  })
-
-
-  // jest.mock('./api') // from __mocks__ directory
+  // beforeEach(() => {
+  //   jest.mock('./api', () => {
+  //     return {
+  //       readSettings: jest
+  //         .fn() // jest spy here
+  //         .mockReturnValue(Promise.resolve())
+  //         .mockReturnValueOnce(Promise.resolve({ status: 'ok' }))
+  //     }
+  //   })  
+  // })
+  jest.mock('./api') // from __mocks__ directory
 
   test('it should read settings', async () => {
     const api = require('./api')
